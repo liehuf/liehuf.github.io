@@ -5,13 +5,11 @@ header-img: img/home-bg.jpg
 email: your-email@yourdomain.com
 description: "单片机开发 | 深度学习 | 技术分享"
 keyword: "单片机, STM32, 深度学习, AI, 机器学习, 技术博客"
-url: "https://yourusername.github.io"
+url: "https://liehuf.github.io"
 baseurl: ""
 
 # SNS settings
-github_username: yourusername
-twitter_username: yourusername
-linkedin_username:  yourusername
+github_username: liehuf
 
 # Build settings
 markdown: kramdown
@@ -31,3 +29,13 @@ nav:
   home: "/"
   about: "/about/"
   tags: "/tags/"
+
+# Markdown settings
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
