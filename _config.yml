@@ -1,10 +1,10 @@
 # Site settings
-title: MCU & Deep Learning Blog
-SEOTitle: 单片机与深度学习博客
+title: 景翳的技术博客
+SEOTitle: 景翳的嵌入式与AI博客 | JingYi Blog
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-description: "单片机开发 | 深度学习 | 技术分享"
-keyword: "单片机, STM32, 深度学习, AI, 机器学习, 技术博客"
+email: 17715076182@163.com
+description: "嵌入式开发 | 深度学习 | 技术分享 | 来自厦门的开发者"
+keyword: "景翳, 博客, 个人网站, 嵌入式, STM32, 深度学习, AI, 机器学习, 厦门"
 url: "https://liehuf.github.io"
 baseurl: ""
 
@@ -30,12 +30,30 @@ nav:
   about: "/about/"
   tags: "/tags/"
 
-# Markdown settings
-kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-  syntax_highlighter_opts:
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+# Comments settings
+disqus_username: jingyi-blog
+
+# Analytics settings
+# Google Analytics
+ga_track_id: ''
+ga_domain: auto
+
+# Sidebar settings
+sidebar-about-description: "嵌入式开发工程师，深度学习爱好者"
+sidebar-avatar: img/avatar.jpg
+
+# Featured Tags
+featured-tags: true
+featured-condition-size: 1
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+# Friends
+friends: [
+    {
+        title: "厦门大学",
+        href: "https://www.xmu.edu.cn"
+    }
+]
