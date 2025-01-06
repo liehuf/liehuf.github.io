@@ -1,46 +1,64 @@
 ---
 layout: default
-description: "探索单片机与深度学习的奥秘"
+description: "探索嵌入式与人工智能的无限可能"
+header-img: "img/home-bg.jpg"
 ---
 
-<div class="home">
-  <div class="posts">
-    {% for post in paginator.posts %}
-    <article class="post">
-      <h2 class="post-title">
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ site.title }}</h1>
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-      {% if post.subtitle %}
-      <h3 class="post-subtitle">
-        {{ post.subtitle }}
-      </h3>
-      {% endif %}
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {% for post in paginator.posts %}
+            <div class="post-preview">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <h2 class="post-title">
+                        {{ post.title }}
+                    </h2>
+                    {% if post.subtitle %}
+                    <h3 class="post-subtitle">
+                        {{ post.subtitle }}
+                    </h3>
+                    {% endif %}
+                    <div class="post-content-preview">
+                        {{ post.content | strip_html | truncate:200 }}
+                    </div>
+                </a>
+                <p class="post-meta">
+                    Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+                </p>
+            </div>
+            <hr>
+            {% endfor %}
 
-      <div class="post-meta">
-        {{ post.date | date: "%B %-d, %Y" }}
-      </div>
-
-      <div class="post-excerpt">
-        {{ post.excerpt | strip_html | truncatewords: 50 }}
-      </div>
-
-      <p class="read-more">
-        <a href="{{ post.url | prepend: site.baseurl }}" class="read-more-link">继续阅读 &rarr;</a>
-      </p>
-    </article>
-    {% endfor %}
-  </div>
-
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">&larr; 上一页</a>
-    {% endif %}
-
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">下一页 &rarr;</a>
-    {% endif %}
-  </div>
-  {% endif %}
+            <!-- Pager -->
+            {% if paginator.total_pages > 1 %}
+            <ul class="pager">
+                {% if paginator.previous_page %}
+                <li class="previous">
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; 上一页</a>
+                </li>
+                {% endif %}
+                {% if paginator.next_page %}
+                <li class="next">
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &rarr;</a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
 </div>

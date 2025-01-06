@@ -3,139 +3,158 @@ body {
     font-family: 'Noto Sans SC', sans-serif;
     color: #333;
     background: #fff;
-    margin-top: 60px;
+    position: relative;
 }
 
 /* Navigation */
 .navbar {
+    background: transparent;
+    transition: all 0.3s ease;
+    padding: 20px 0;
+}
+
+.navbar.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 1rem 0;
+    padding: 10px 0;
 }
 
 .navbar-brand {
     font-weight: 700;
     font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar.is-fixed .navbar-brand {
+    color: #333;
 }
 
 .nav-link {
     font-size: 1.1rem;
     margin: 0 0.5rem;
+    color: rgba(255,255,255,0.8);
+    transition: color 0.3s ease;
+}
+
+.navbar.is-fixed .nav-link {
+    color: #666;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.navbar.is-fixed .nav-link:hover {
+    color: #333;
+}
+
+/* Intro Header */
+.intro-header {
+    background: no-repeat center center;
+    background-color: #808080;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.site-heading {
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.site-heading h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.site-heading .subheading {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    display: block;
+    font-weight: 300;
 }
 
 /* Posts */
-.post {
-    margin-bottom: 4rem;
-    padding: 2rem;
+.post-preview {
     background: #fff;
     border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.post:hover {
+.post-preview:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 .post-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.post-title a {
-    color: #333;
-    text-decoration: none;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .post-subtitle {
-    color: #666;
     font-size: 1.2rem;
+    color: #666;
     margin-bottom: 1rem;
+}
+
+.post-content-preview {
+    color: #666;
+    margin: 1rem 0;
+    line-height: 1.6;
 }
 
 .post-meta {
     color: #999;
     font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-style: italic;
 }
 
-.post-excerpt {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.read-more-link {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* Footer */
-footer {
-    padding: 3rem 0;
-    margin-top: 3rem;
-    background: #f8f9fa;
-    text-align: center;
-}
-
-.copyright {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-}
-
-/* Pagination */
-.pagination {
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.pagination a {
-    padding: 0.5rem 1rem;
-    margin: 0 0.25rem;
-    border-radius: 4px;
-    background: #f8f9fa;
-    color: #007bff;
-    text-decoration: none;
-}
-
-/* Tags */
-.tags {
-    margin: 2rem 0;
-}
-
-.tag {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    margin: 0.2rem;
-    border-radius: 4px;
-    background: #f8f9fa;
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
+.post-preview {
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: calc(var(--animation-order) * 0.1s);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .post {
-        padding: 1rem;
+    .site-heading h1 {
+        font-size: 3rem;
+    }
+    
+    .site-heading .subheading {
+        font-size: 1.2rem;
+    }
+    
+    .post-preview {
+        padding: 1.5rem;
     }
     
     .post-title {
         font-size: 1.5rem;
     }
-    
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.post {
-    animation: fadeIn 0.6s ease-out forwards;
 }
