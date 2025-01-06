@@ -1,11 +1,13 @@
----
+
+<!-- saved from url=(0025)https://liehuf.github.io/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>---
 layout: default
 description: "探索嵌入式与人工智能的无限可能"
 header-img: "img/home-bg.jpg"
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header" style="background-image: url(&#39;{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}&#39;)">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -24,7 +26,7 @@ header-img: "img/home-bg.jpg"
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             {% for post in paginator.posts %}
             <div class="post-preview">
-                <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                <a href="https://liehuf.github.io/%7B%7B%20post.url%20%7C%20prepend:%20site.baseurl%20%7D%7D">
                     <h2 class="post-title">
                         {{ post.title }}
                     </h2>
@@ -45,16 +47,16 @@ header-img: "img/home-bg.jpg"
             {% endfor %}
 
             <!-- Pager -->
-            {% if paginator.total_pages > 1 %}
+            {% if paginator.total_pages &gt; 1 %}
             <ul class="pager">
                 {% if paginator.previous_page %}
                 <li class="previous">
-                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; 上一页</a>
+                    <a href="https://liehuf.github.io/%7B%7B%20paginator.previous_page_path%20%7C%20prepend:%20site.baseurl%20%7C%20replace:%20&#39;//&#39;,%20&#39;/&#39;%20%7D%7D">← 上一页</a>
                 </li>
                 {% endif %}
                 {% if paginator.next_page %}
                 <li class="next">
-                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &rarr;</a>
+                    <a href="https://liehuf.github.io/%7B%7B%20paginator.next_page_path%20%7C%20prepend:%20site.baseurl%20%7C%20replace:%20&#39;//&#39;,%20&#39;/&#39;%20%7D%7D">下一页 →</a>
                 </li>
                 {% endif %}
             </ul>
@@ -62,3 +64,4 @@ header-img: "img/home-bg.jpg"
         </div>
     </div>
 </div>
+</body></html>
