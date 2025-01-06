@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            <div class="navbar-menu">
+                <a href="{{ site.baseurl }}/about/">关于</a>
+                <a href="{{ site.baseurl }}/tags/">标签</a>
+            </div>
+        </div>
+    </nav>
+
+    {{ content }}
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        {% if site.github_username %}
+                        <li>
+                            <a href="https://github.com/{{ site.github_username }}" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-github fa-stack-2x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+</body>
+</html>
